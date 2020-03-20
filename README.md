@@ -1,8 +1,8 @@
 # spring-boot-docker-image-demo
 
-# Docker info 
 
-# database image 
+
+# Docker database image 
 
 build  command  -- >  
 
@@ -14,7 +14,7 @@ sudo docker run -p 5433:5432 --name flairs-db flairs-db
 
 
 
-# spring image
+# Docker spring image
 build  command  -- > 
 sudo docker build -t flairs-api
 
