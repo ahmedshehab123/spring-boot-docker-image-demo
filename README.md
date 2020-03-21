@@ -1,7 +1,7 @@
 # spring-boot-docker-image-demo
 
 # Maven 
-build project -->
+build project :
 
 mvn clean installs
 
