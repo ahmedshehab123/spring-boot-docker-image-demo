@@ -1,6 +1,9 @@
 # spring-boot-docker-image-demo
 
+# Maven 
+build project -->
 
+mvn clean install
 
 # Docker database image 
 

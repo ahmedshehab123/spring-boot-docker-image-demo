@@ -27,16 +27,18 @@ public class CountryCodeTest {
     @Test
     public void validCountryCodeTest() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:8080/api/country/BHRR";
+        final String baseUrl = "http://localhost:8080/api/country/BHR";
         URI uri = new URI(baseUrl);
         ResponseEntity<Country> result = restTemplate.getForEntity(uri, Country.class);
         Assert.assertEquals(200, result.getStatusCodeValue());
     }
 
+     //  if the transaction get into the cathch exception it will return error which mean that server is down
+
     @Test
     public void validDataBaseConnection() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:8080/api/country/BHRR";
+        final String baseUrl = "http://localhost:8080/api/country/BHR";
         URI uri = new URI(baseUrl);
         ResponseEntity<Country> result = restTemplate.getForEntity(uri, Country.class);
         Assert.assertEquals(200, result.getStatusCodeValue());

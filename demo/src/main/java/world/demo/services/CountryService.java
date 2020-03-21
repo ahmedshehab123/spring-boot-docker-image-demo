@@ -1,7 +1,10 @@
 package world.demo.services;
 
+import org.hibernate.exception.JDBCConnectionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.CannotCreateTransactionException;
+import org.springframework.web.client.HttpServerErrorException;
 import world.demo.model.entity.Country;
 import world.demo.model.repository.CountryRepository;
 import world.demo.utils.ErrorCodes;
@@ -18,6 +21,12 @@ public class CountryService {
 
     public Country getCountryInfoByCountryCode(String countryCode){
 
+        try {
+            countryRepository.count();
+        }catch (CannotCreateTransactionException  e){
+            e.printStackTrace();
+            throw new WorldExceptions(ErrorCodes.INTERNAL_ERROR);
+        }
 
         Country country = countryRepository.findCountryByCode(countryCode);
         if (country == null)
